@@ -1,30 +1,31 @@
 ## What's this
-[CIUnit](https://bitbucket.org/rafsoaken/ciunit) for CodeIgniter 2.x
+[CIUnit](https://github.com/RodolfoSilva/CIUnit-for-CI3) for CodeIgniter 3.x
+[CIUnit](https://github.com/fukata/CIUnit-for-CI2) for CodeIgniter 2.x
 
 ## Installation
 ## Use install.sh
-	./tools/install.sh [CI2 Project Path]
+	./tools/install.sh [CI3 Project Path]
 ## Manual
 ### Copy CIUnit Files
-	cp -R CIUnit-for-CI2/application [CI2 Project Path]/
-	cp -R CIUnit-for-CI2/tests [CI2 Project Path]/
+	cp -R CIUnit-for-CI3/application [CI3 Project Path]/
+	cp -R CIUnit-for-CI3/tests [CI3 Project Path]/
 ### Change Database Config
-	vi [CI2 Project Path]/application/config/database.php
+	vi [CI3 Project Path]/application/config/database.php
 
 	$active_group = 'default';
 	+ if (defined('CIUnit_Version')) {
 	+     $active_group .= '_test';
 	+ }
-	$active_record = TRUE;
+	$query_builder = TRUE;
 
 
 ## Run Tests
 ### AllTests
-	cd [CI2 Project Path]/tests
+	cd [CI3 Project Path]/tests
 	phpunit
 
 ### UnitTest
-	cd [CI2 Project Path]/tests
+	cd [CI3 Project Path]/tests
 	phpunit --no-configuration --bootstrap ../application/third_party/CIUnit/bootstrap_phpunit.php [Directory or PHP file path]
 
 ## Eclipse Settings
